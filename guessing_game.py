@@ -5,14 +5,10 @@ Project 1 - The Number Guessing Game
 """
 import random 
 
-# Keep messages to user consistent and less DRY
-def user_notification(message):
-    print("-" * 15)
-    print(message)
-
 
 def start_game(current_high_score):
-    user_notification("Game Start: Please guess a number between 1 and 10.")
+    print("-" * 15)
+    print("Game Start: Please guess a number between 1 and 10.")
     # The game variables
     random_number = random.randint(1, 10)
     number_of_guesses = 0
@@ -38,18 +34,20 @@ def start_game(current_high_score):
 
     # Congratulate the user if they beat the high score
     if number_of_guesses < current_high_score:
-        user_notification("Congrats!! you scored {} beating the original high score {}.".format(number_of_guesses, current_high_score)) 
+        print("Congrats!! you scored {} beating the original high score {}.".format(number_of_guesses, current_high_score)) 
     elif number_of_guesses == current_high_score:
-        user_notification("Congrats!! you scored {} beating the matching the high score {}.".format(number_of_guesses, current_high_score))
+        print("Congrats!! you scored {} beating the matching the high score {}.".format(number_of_guesses, current_high_score))
     else:
-        user_notification("You scored {} therefore not beating the high score of {}.".format(number_of_guesses, current_high_score))         
+        print("You scored {} therefore not beating the high score of {}.".format(number_of_guesses, current_high_score))         
     # See if the user wants to play again
     play_again = input("Would you like to play again? Y/N\n")
     if play_again.upper() == "Y":
         # Start game again
         start_game(number_of_guesses)
     else:
-        user_notification("Have a great day! Ending program.")
+        print("-" * 15)
+        print("Have a great day! Ending program.")
 
-# Start game and decide what the high score will be
+
+# Start game and decide the original high score
 start_game(4)

@@ -9,6 +9,7 @@ import random
 def start_game(current_high_score):
     print("-" * 15)
     print("Game Start: Please guess a number between 1 and 10.")
+    print("The current high score is {}.".format(current_high_score))
     # The game variables
     random_number = random.randint(1, 10)
     number_of_guesses = 0

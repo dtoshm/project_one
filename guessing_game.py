@@ -5,14 +5,17 @@ Project 1 - The Number Guessing Game
 """
 
 # Import the random module.
+import random 
 
-# Create the start_game function.
 # Write your code inside this function.
+def start_game():
+    print("-" * 15)
+    num = random.randint(1, 10)
+    user_guess = input(int("Guess a number"))
+    
 
-#   When the program starts, we want to:
-#   ------------------------------------
-#   1. Display an intro/welcome message to the player.
-#   2. Store a random number as the answer/solution.
+
+
 #   3. Continuously prompt the player for a guess.
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 #     b. If the guess is less than the solution, display to the player "It's higher".
@@ -25,3 +28,4 @@ Project 1 - The Number Guessing Game
 
 
 # Kick off the program by calling the start_game function.
+start_game()

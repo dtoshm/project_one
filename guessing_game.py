@@ -44,7 +44,10 @@ def start_game(current_high_score):
     play_again = input("Would you like to play again? Y/N\n")
     if play_again.upper() == "Y":
         # Start game again
-        start_game(number_of_guesses)
+        if number_of_guesses < current_high_score:
+            start_game(number_of_guesses)
+        else:
+            start_game(current_high_score)
     else:
         print("-" * 15)
         print("Have a great day! Ending program.")
